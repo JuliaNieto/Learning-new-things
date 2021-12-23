@@ -1,0 +1,71 @@
+---------DESTRUCTURING OBJECTS---JS--------------------
+const student = {
+    name: "Kyle",
+    age: 24,
+    projects: {
+        diceGame: "Two player dice game using JavaScript"
+    }
+}
+
+const { name, age, projects:{diceGame}}= student;
+
+console.log(`${name} is a young guy of ${age} years old 
+who made a ${diceGame}`)
+---------------DESTRUCTURING ARRAYS-------------------------
+so we have an array :
+    let name =["X", "Y","Z"];
+
+to destructure it we create pointer elements; which are elements that point to one of each elements in the array
+   let [uno, dos, tres] = [X, Y,Z];
+This goes index by index. 
+We can update the data of the array if we want by using the pointers.
+uno= "John";
+
+-----------------OBJECT LITERALS--------------------------
+They check if two elements have the same name and it maps one to the other
+    function addressMaker(city, state) {
+        const newAdress = {city, state}; // does not need to write city: city because it is obviously the same thing
+
+        console.log(newAdress);
+    }
+
+    addressMaker('Austin', 'Texas');
+    
+    --------CHALLENGE---------------------------------------------
+    function addressMaker(address) {
+    const {city, state}=address;
+    const newAddress = {
+        city: city,
+        state: state,
+        country: 'United States'
+    };
+    console.log(`${newAddress.city}, ${newAddress.state}, ${newAddress.country}`);
+}
+
+addressMaker({city: 'Austin', state: 'Texas'});
+
+------CHALLENGE OF FOR-OF LOOPS-------------------
+
+const students = [ 
+    { name: "John", city: "New York" },
+    { name: "Peter", city: "Paris"},
+    { name: "Kate", city: "Sidney" }
+]
+
+for (const {name, city} of students){
+    console.log(`${name} lives in ${city}`)
+}
+||||OTHER OPTION|||||||
+
+for (const student of stude nts){
+  console.log( student.name + " lives in " + student.city );
+}
+------------------SPREAD OPERATOOOR-----------------
+
+const shoppingList = ["eggs", "milk", "butter"];
+
+const shoppingBasket = [...shoppingList, "cookies", "bread"]
+
+console.log(shoppingBasket)
+
+
